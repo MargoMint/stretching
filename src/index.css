@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom soft brand colors */
+  --color-brand-beige: #F4EFEA;       /* Creamy warm beige background */
+  --color-brand-ivory: #FDFBF7;       /* Soft ivory background */
+  --color-brand-cream: #FAF5EE;       /* Richer cream */
+  --color-brand-sage: #CBD4C2;        /* Elegant sage green */
+  --color-brand-sage-light: #EBF0E6;  /* Muted pale sage */
+  --color-brand-pink: #F2E4DE;        /* Dusty blush pink background */
+  --color-brand-blush: #E5CFC6;       /* Soft pink accent */
+  --color-brand-taupe: #DFD5C6;       /* Warm taupe */
+  --color-brand-terracotta: #AC6E55;  /* Terracotta accent */
+  --color-brand-gold: #C5A059;        /* Soft elegant gold accent */
+  --color-brand-brown: #4F3F38;       /* Warm elegant brown for secondary text */
+  --color-brand-charcoal: #2A2421;    /* Deep, soft brown-charcoal for primary text */
+  
+  --shadow-soft: 0 4px 20px -2px rgba(42, 36, 33, 0.04), 0 2px 8px -1px rgba(42, 36, 33, 0.02);
+  --shadow-medium: 0 10px 30px -5px rgba(42, 36, 33, 0.06), 0 4px 12px -2px rgba(42, 36, 33, 0.03);
+}
+
+/* Custom scrollbar and premium elements */
+html {
+  scroll-behavior: smooth;
+  color: var(--color-brand-charcoal);
+  background-color: var(--color-brand-ivory);
+}
+
+::selection {
+  background-color: var(--color-brand-blush);
+  color: var(--color-brand-charcoal);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background-color: rgba(253, 251, 247, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Custom animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.animate-text-shimmer {
+  background: linear-gradient(
+    120deg,
+    #2a2421 35%,
+    #ac6e55 46%,
+    #c5a059 50%,
+    #ac6e55 54%,
+    #2a2421 65%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  animation: textShimmer 7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  display: inline-block;
+}
+
